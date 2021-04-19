@@ -50,10 +50,15 @@ const dramaMoviesRate = ((movies)=> {
 // Iteration 5: Ordering by year - Order by year, ascending (in growing order)
 const orderByYear = function (movies) {
     const sortedMovieAsc = [...movies].sort ((a, b) => {
-    if (a.year != b.year) { 
+    if (a.year === b.year) { 
+        if (a.title < b.title) {
+            return -1;
+        }
+        if (a.title > b.title);{
+            return 1;
+        }
+    } else {
         return (a.year - b.year);
-    } else if (a.year === b.year) {
-        return (a.title - b.title);
     }
 });
     console.log('---------Ordering by year---------------');
